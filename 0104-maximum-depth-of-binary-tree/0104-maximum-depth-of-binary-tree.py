@@ -9,12 +9,5 @@ class Solution:
         if root is None:
             return 0
         
-        def dfs(current):
-            if current is None:
-                return 1
-            elif (current.left == None and current.right == None):
-                return 1
-            
-            return 1 + max(dfs(current.left), dfs(current.right))
+        return 1 + max(self.maxDepth(root.left), self.maxDepth(root.right))
         
-        return dfs(root)
