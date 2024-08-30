@@ -12,9 +12,7 @@ class Solution:
         for i in range(len(nums)):
             if nums[i] > largest:
                 largest = nums[i]
-            numbers[nums[i]] = True
-        
-        print(numbers)
+            numbers[nums[i]] = True 
         
         current = 1
         
