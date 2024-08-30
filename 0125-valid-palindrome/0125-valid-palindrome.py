@@ -1,22 +1,23 @@
 class Solution:
     def isPalindrome(self, s: str) -> bool:
-        s = s.lower()
-        news = ""
-        chars = "abcdefgghijklmnopqrstuvwxyz0123456789"
+        def alphaNum(self, c):
+            return (ord("A") <= ord(c) <= ord("Z") or
+                    ord("a") <= ord(c) <= ord("z") or
+                    ord("0") <= ord(c) <= ord("9"))
         
-        for i in range(len(s)):
-            if s[i] in chars:
-                news += s[i]
+        l, r = 0, len(s) - 1
+        
+        while l < r:
+            while l < r and not alphaNum(self, s[l]):
+                l += 1
+                
+            while r > l and not alphaNum(self, s[r]):
+                r -= 1
             
-        s = news
-        
-        i, j = 0, len(s) - 1
-        
-        while i < len(s):
-            if s[i] != s[j]:
+            if s[l].lower() != s[r].lower():
                 return False
             
-            i += 1
-            j -= 1
+            l += 1
+            r -= 1
         
         return True
