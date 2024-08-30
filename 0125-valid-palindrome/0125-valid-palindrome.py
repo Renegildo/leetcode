@@ -2,13 +2,10 @@ class Solution:
     def isPalindrome(self, s: str) -> bool:
         s = s.lower()
         news = ""
-        chars = [
-            ",", ":", " ", ".", "@", "#", "_", "\\", "{", "}", "[", "]", "'", "\"", "-", "?",
-            ";", "!", "(", ")", "`"
-        ]
+        chars = "abcdefgghijklmnopqrstuvwxyz0123456789"
         
         for i in range(len(s)):
-            if s[i] not in chars:
+            if s[i] in chars:
                 news += s[i]
             
         s = news
