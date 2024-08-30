@@ -11,7 +11,6 @@ class Solution:
             if s[i] not in chars:
                 news += s[i]
             
-        print(news)
         s = news
         
         i, j = 0, len(s) - 1
